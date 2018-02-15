@@ -1,3 +1,7 @@
+/**
+ * 拉取基础信息
+ * @return string
+ */
 function getBaseInfo() {
     $.ajax({
         url: protocol + '://' + mainhost + sitepath + 'api.php',
