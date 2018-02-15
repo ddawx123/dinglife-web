@@ -73,3 +73,51 @@ function getCoverList() {
         }
     });
 }
+
+function doLoginRequest() {
+    var username = $('#user').val();
+    var password = $('#pswd').val();
+    if (username == '') {
+        alert('抱歉，用户名不能为空！');
+    }
+    else if (password == '') {
+        alert('抱歉，密码不能为空！');
+    }
+    else {
+        $.ajax({
+            url: protocol + '://' + mainhost + sitepath + 'api.php',
+            method: 'get',
+            data: {
+                'c': 'Index',
+                'a': 'login',
+                'user': username,
+                'pswd': MD5(password)
+            },
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            success: function (r) {
+                if (jQuery.isEmptyObject(r)) {
+                    alert('服务端成功接受了请求，但没有返回任何数据。可能是由于您没有创建任何项目！');
+                }
+                else if (r.code === 200) {
+                    if (!confirm('登录成功！是否立即进入后台管理面板？')) {
+                        history.go(-1);
+                    }
+                    else {
+                        location.href = protocol + '://' + mainhost + sitepath + 'admin.php';
+                    }
+                }
+                else if (r.code === 403) {
+                    alert('登录失败：' + r.message);
+                }
+                else {
+                    alert('登录失败：服务端无法验证您的请求，可能是您的请求过于频繁，请稍候再试一次。');
+                }
+            },
+            error: function (e) {
+                alert('网络请求异常，请检查是否可以正确连接主服务端接口。');
+            }
+        });
+    }
+    return false;
+}
