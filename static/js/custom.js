@@ -20,6 +20,8 @@ function getBaseInfo() {
                 $('.title').html(value.myalbum_nickname);
                 $('#mname').html(value.myalbum_name);
                 $('#msaying').html(value.myalbum_saying);
+                $('#sicon').attr('href', value.myalbum_logo);
+                $('#bicon').attr('href', value.myalbum_logo);
                 $('#header_logo').attr('src', value.myalbum_logo);
                 $('#copyinfo').html(value.myalbum_copyright);
                 $('#author_name').html(value.myalbum_author);
