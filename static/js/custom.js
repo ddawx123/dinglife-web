@@ -74,6 +74,10 @@ function getCoverList() {
     });
 }
 
+/**
+ * 跨域登录请求
+ * @return mixed
+ */
 function doLoginRequest() {
     var username = $('#user').val();
     var password = $('#pswd').val();
