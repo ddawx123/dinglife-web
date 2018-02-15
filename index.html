@@ -64,6 +64,9 @@
 				</div>
 			</footer>
 		</div>
+		<div id="musicbox" style="display: none">
+			<!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=0&id=2098851089&auto=1&height=32"></iframe>-->
+		</div>
 		<!-- Scripts --> 
 		<script src="static/js/jquery.min.js"></script>
 		<script src="static/js/skel.min.js"></script>
@@ -74,8 +77,24 @@
 		<script src="static/js/main.js"></script>
 		<script src="static/js/custom.js"></script>
 		<script>
-			getBaseInfo();
-			getCoverList();
+			//Web前端应用初始化
+			$(document).ready(function() {
+				getBaseInfo(); //获取首页基础信息
+				getCoverList(); //渲染相册列表
+				//异步加载背景音乐
+				$.ajax({
+        			url: protocol + '://' + mainhost + sitepath + 'utils/musicbox.txt',
+        			method: 'get',
+        			dataType: 'html',
+        			async: true,
+        			success: function (text) {
+            			$('#musicbox').html(text);
+        			},
+        			error: function (e) {
+            			console.log('music disabled');
+        			}
+    			});
+			});
 		</script>
 	</body>
 </html>

@@ -1,8 +1,3 @@
-$(document).ready(function() {
-    $('#crossdomain_login').attr('href', protocol + '://' + mainhost + sitepath + 'utils/crossdomain.php');
-    $('#wechat_login').attr('onclick', 'alert("抱歉，该渠道暂未开通！")');
-});
-
 /**
  * 拉取基础信息
  * @return string

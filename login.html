@@ -11,6 +11,13 @@
 <script src="static/js/md5.js"></script>
 <script src="static/js/configure.js"></script>
 <script src="static/js/custom.js"></script>
+<script>
+    //Web前端应用初始化
+    $(document).ready(function() {
+        $('#crossdomain_login').attr('href', protocol + '://' + mainhost + sitepath + 'utils/crossdomain.php');
+        $('#wechat_login').attr('onclick', 'alert("抱歉，该渠道暂未开通！")');
+    });
+</script>
 </head>
 <body>
 <div class="login_box">
