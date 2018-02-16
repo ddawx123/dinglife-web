@@ -43,7 +43,7 @@
 			<div class="col-md-12 text-center">
 				<ul class="menu">
 					<li class="active">
-						<a href="login.html">登录</a>
+						<a href="sign-up.html">注册</a>
 					</li>
 					<li>
 						<a href="index.html">统一身份认证平台</a>
@@ -54,29 +54,34 @@
 		<div class="row">
 			<div class="col-md-4 col-md-push-8">
 				<!-- Start Sign In Form -->
-				<form method="post" action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight" onsubmit="return doLoginRequest()">
-					<h2>用户登录</h2>
+				<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
+					<h2>用户注册</h2>
 					<div class="form-group">
-						<label for="username" class="sr-only">Username</label>
-						<input type="text" class="form-control" id="user" placeholder="键入用户账号" autocomplete="off">
+						<div class="alert alert-success" role="alert">这些信息将被安全的加密后保存</div>
 					</div>
 					<div class="form-group">
-						<label for="password" class="sr-only">Password</label>
-						<input type="password" class="form-control" id="pswd" placeholder="键入账号密码" autocomplete="off">
+						<label for="name" class="sr-only">用户账号</label>
+						<input type="text" class="form-control" id="name" placeholder="用户账号" autocomplete="off">
 					</div>
 					<div class="form-group">
-						<label for="remember">
-							<input type="checkbox" id="remember">记住用户名</label>
+						<label for="email" class="sr-only">关联邮箱</label>
+						<input type="email" class="form-control" id="email" placeholder="关联邮箱" autocomplete="off">
 					</div>
 					<div class="form-group">
-						<p>无法登录？
-							<a href="sign-up.html">马上注册</a> |
-							<a href="forgot.html">找回密码</a> |
-							<a href="login_pc.html">旧版入口</a>
+						<label for="password" class="sr-only">账号密码</label>
+						<input type="password" class="form-control" id="password" placeholder="账号密码" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label for="re-password" class="sr-only">确认密码</label>
+						<input type="password" class="form-control" id="re-password" placeholder="确认密码" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<p>已有账号？
+							<a href="login.html">前往登录页</a>
 						</p>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="立即登录" class="btn btn-primary">
+						<input type="submit" value="提交注册" class="btn btn-primary">
 					</div>
 				</form>
 				<!-- END Sign In Form -->
@@ -92,6 +97,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- jQuery -->
 	<script src="static/js/jquery.min.js"></script>
 	<!-- Bootstrap -->
@@ -102,10 +108,7 @@
 	<script src="static/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="static/js/loginpage.js"></script>
-	<!-- Custom Application -->
-	<script src="static/js/md5.js"></script>
-	<script src="static/js/configure.js"></script>
-	<script src="static/js/custom.js"></script>
+
 </body>
 
 </html>

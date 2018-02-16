@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>统一身份认证平台</title>
+<link href="static/css/login.css" rel="stylesheet" type="text/css" />
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/md5.js"></script>
+<script src="static/js/configure.js"></script>
+<script src="static/js/custom.js"></script>
+<script>
+    //Web前端应用初始化
+    $(document).ready(function() {
+        $('#crossdomain_login').attr('href', protocol + '://' + mainhost + sitepath + 'utils/crossdomain.php');
+        $('#wechat_login').attr('onclick', 'alert("抱歉，该渠道暂未开通！")');
+    });
+</script>
+</head>
+<body>
+<div class="login_box">
+    <div class="login_l_img">
+        <img src="static/img/login-img.png" />
+    </div>
+    <div class="login">
+        <div class="login_logo">
+            <a href="#">
+                <img src="static/img/login_logo.png" />
+            </a>
+        </div>
+        <div class="login_name">
+            <p>统一身份认证平台<br><small>请使用“云相册”平台账号登录</small></p>
+        </div>
+        <form method="post" action="#" onsubmit="return doLoginRequest()">
+            <input name="user" id="user" type="text"  placeholder="用户名" />
+            <input name="pswd" id="pswd" type="password" placeholder="密码" />
+            <input type="submit" value="登录" />
+        </form>
+        <br>
+        其他身份认证渠道：<a id="crossdomain_login" href="#">SSO一键登录</a>|<a id="wechat_login" href="#">微信登录</a>
+    </div>
+    <div class="copyright">统一身份认证 &copy;2012-<script>document.write(new Date().getFullYear());</script> DingStudio Technology All Rights Reserved 技术支持：<a href="http://www.dingstudio.cn" target="_blank">小丁工作室</a></div>
+</div>
+</body>
+</html>
