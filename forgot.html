@@ -54,18 +54,19 @@
 		<div class="row">
 			<div class="col-md-4 col-md-push-8">
 				<!-- Start Sign In Form -->
-				<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
+				<form method="post" action="https://passport.dingstudio.cn/sso/member.php?action=findpwd" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
+					<input type="hidden" name="error_callback" id="error_callback" />
 					<h2>密码重置向导</h2>
 					<div class="form-group">
 						<div class="alert alert-success" role="alert">请填写注册账号时绑定的邮箱</div>
 					</div>
 					<div class="form-group">
 						<label for="email" class="sr-only">绑定邮箱</label>
-						<input type="email" class="form-control" id="email" placeholder="绑定邮箱" autocomplete="off">
+						<input type="email" class="form-control" name="email" id="email" placeholder="绑定邮箱" autocomplete="off">
 					</div>
 					<div class="form-group">
-						<label for="vcode" class="sr-only">验证码</label>
-						<input type="text" class="form-control" id="vcode" placeholder="验证码" autocomplete="off">
+						<label for="imgcode" class="sr-only">验证码</label>
+						<input type="text" class="form-control" name="imgcode" id="imgcode" placeholder="验证码" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<p>
@@ -102,6 +103,11 @@
 	<script src="static/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="static/js/loginpage.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#error_callback').val(window.location.href);
+		});
+	</script>
 
 </body>
 

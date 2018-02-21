@@ -54,7 +54,7 @@
 		<div class="row">
 			<div class="col-md-4 col-md-push-8">
 				<!-- Start Sign In Form -->
-				<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
+				<form method="post" action="#" class="fh5co-form animate-box" data-animate-effect="fadeInRight">
 					<h2>用户注册</h2>
 					<div class="form-group">
 						<div class="alert alert-success" role="alert">这些信息将被安全的加密后保存</div>
@@ -108,7 +108,11 @@
 	<script src="static/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="static/js/loginpage.js"></script>
-
+	<script>
+		$(document).ready(function() {
+			$('body').append('<script>alert("该应用的跨站注册请求未被允许，请联系系统管理员。");history.go(-1);<\/script>');
+		});
+	</script>
 </body>
 
 </html>
