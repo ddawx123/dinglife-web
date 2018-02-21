@@ -62,7 +62,7 @@ function getCoverList() {
                 if (value.open == '1') {
                     var record = '<article class="style' + value.style +  '">\
                     <span class="image"><img src="' + value.coveraddr + '" alt="" /></span>\
-                    <a href="' + protocol + '://' + mainhost + sitepath + 'index.php?c=sub&cid=' + value.cid + '" target="_blank">\
+                    <a href="' + protocol + '://' + mainhost + sitepath + 'Home/Sub?cid=' + value.cid + '" target="_blank">\
                     <h2>' + value.name + '</h2><div class="content"><p>' + value.inst + '</p></div></a></article>';
                     $('.tiles').append(record);
                 }
